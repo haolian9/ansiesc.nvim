@@ -7,7 +7,7 @@ render ansi esc sequences
 * it wont delete the source bufnr
 * as it's a terminal buffer, it has limits:
     * terminal mode instead insert mode
-    * not responsible to user input
+    * no responsing user inputs
     * not modifiable by default
     * limited scrollback
     * no undo history
@@ -22,8 +22,8 @@ render ansi esc sequences
 ## usage
 here is my personal config
 ```
-usercmd("AnsiEsc", function() require("ansiesc")(ni.get_current_buf(), "inplace") end)
+cmds.create("AnsiEsc", function() require("ansiesc")(ni.get_current_buf(), "inplace") end)
 ```
 
 ## credits
-thanks to AnsiEsc.vim, which i have used for a long time.
+thanks to AnsiEsc.vim, which i had used for a long time.
