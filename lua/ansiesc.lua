@@ -6,8 +6,6 @@ local ni = require("infra.ni")
 
 ---@param name_or_nr string|integer @bufnr or file name
 ---@param open_mode infra.bufopen.Mode
----@return integer winid
----@return integer bufnr
 return function(name_or_nr, open_mode)
   local function namefn(bufnr) return string.format("ansi://%s/%s", name_or_nr, bufnr) end
   local bufnr = Ephemeral({ namefn = namefn, modifiable = false })
@@ -30,8 +28,6 @@ return function(name_or_nr, open_mode)
     vim.fn.chanclose(tid)
   end
 
-  local winid = bufopen(open_mode, bufnr)
-
-  return winid, bufnr
+  bufopen(open_mode, bufnr)
 end
 
