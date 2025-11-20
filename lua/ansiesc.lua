@@ -17,6 +17,7 @@ return function(name_or_nr, open_mode)
     if type(name_or_nr) == "number" then
       lines = buflines.iter(name_or_nr)
     else
+      ---@cast name_or_nr string
       lines = io.lines(name_or_nr, "*l")
     end
 
