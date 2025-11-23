@@ -4,21 +4,21 @@ https://github.com/haolian9/zongzi/assets/6236829/1f3f82b3-018c-4b3d-aac3-aebbc3
 
 
 ## impl, limits, design choices
-* it simply reads from the source (a buffer or a file), 
-  and sends the contents to a terminal buffer
-* it wont delete the source bufnr
-* as it's a terminal buffer, it inherits limits:
+* it simply reads given source (a buffer or a file), then sends content to a terminal buffer
+* it wont replace/delete the source bufnr
+* as being a terminal buffer, it inherits limits:
     * terminal mode instead insert mode
     * no responsing user inputs
     * not modifiable by default
     * limited scrollback
     * no undo history
+* it wont be updated as source buffer changing
 
 ## status
 * just works
 
 ## prerequisites
-* nvim 0.10.*
+* nvim 0.11.*
 * haolian9/infra.nvim
 
 ## usage
